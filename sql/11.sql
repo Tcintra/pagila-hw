@@ -3,3 +3,15 @@
  * Use tables inventory and film.
  * Order by film title alphabetically.
  */
+
+SELECT film_id, title, COUNT(film_id) FROM film
+
+JOIN inventory
+
+USING (film_id)
+
+WHERE STRPOS(title, 'H') = 1
+
+GROUP BY film_id
+
+ORDER BY title DESC;
